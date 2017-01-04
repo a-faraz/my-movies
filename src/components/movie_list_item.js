@@ -2,15 +2,14 @@ import React from 'react'
 
 const MovieListItem = (movie) => {
 
-	//console.log("list item= ", movie.movieName);
-	const title = movie.movieName;
-	const id = movie.id
-	
 	return (
 		<li className="list-group-item">
-				<div>
-					<div className="movie-heading">{movie.movieName}</div>
-			</div>
+				<div className="movie-heading">{movie.title} ({movie.year})</div>
+				<div className="sub-heading">
+						Cast: {movie.actors} <br/>
+						Genre: {movie.genre} <br/>
+						Rating: {movie.rating}
+				</div>
 		</li>
 	);
 

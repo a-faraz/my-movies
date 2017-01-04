@@ -12,10 +12,18 @@ class MovieApp extends Component {
 			movies: [ 
 				{
 					id: 1,
-					title: "Inception"
+					title: "Inception",
+					genre: "Action",
+					actors: "di caprio",
+					rating: 7,
+					year: 2010
 				}, {
 					id: 2,
-					title: "Titanic"
+					title: "Titanic",
+					genre: "Romance",
+					actors: "di caprio",
+					rating: 6,
+					year: 1994
 				}
 			]
 		};
