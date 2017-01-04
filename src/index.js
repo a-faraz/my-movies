@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-import MovieSearch from './components/movie_search';
-import MovieAdd from './components/movie_add';
+import MovieApp from './components/movieApp';
 
 class App extends Component {
 	constructor(props) {
@@ -16,7 +15,7 @@ class App extends Component {
 		return (
 			<div>	
 				<div className="page-title"> Home Movie Collection </div>
-
+				<MovieApp />
 			</div>
 		)
 	}
