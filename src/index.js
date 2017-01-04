@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
+import MovieSearch from './components/movie_search';
+import MovieAdd from './components/movie_add';
 
 class App extends Component {
 	constructor(props) {
