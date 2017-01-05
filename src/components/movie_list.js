@@ -9,13 +9,15 @@ const MovieList = (props) => {
 	const movieItems = props.movies.map((movie) => {
 		return (
 			<MovieListItem
+			onDeleteMovie={props.onDeleteMovie}
 			// {...movie} allows you to spread out props
-			key={movie.id} {...movie} />
+			//	key={movie.id} {...movie} />
+			key={movie.id} movie={movie} />
 		)
 	});
 
 	return (
-		<ul className="col-md-4 list-group" >
+		<ul className="list-group" >
 			{movieItems}
 		</ul>
 	);

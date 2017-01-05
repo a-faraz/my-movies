@@ -4,21 +4,21 @@ class MovieSearch extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {term: ''};
+		this.state = {};
 	}
 
+
 	onInputChange(term) {
-		// set state object to whatever is inputted
-		this.setState({term})
-		// print to console for checking
-		console.log(this.state.term);
+		let searchText = this.refs.searchText.value;
+
+		this.props.onSearchMovie(searchText);
 	}
 
 	render() {
 		return (
 			<div className="search-bar" >
 				<input
-				value={this.state.term}
+				type="search" ref="searchText" placeholder="Search Movies"
 				onChange={event => this.onInputChange(event.target.value)} />
 			</div>
 		)

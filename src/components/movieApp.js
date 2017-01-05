@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import uuid from 'node-uuid';
 
 import MovieSearch from './movie_search';
 import MovieAdd from './movie_add';
@@ -9,39 +10,53 @@ class MovieApp extends Component {
 		super(props);
 
 		this.state = {
-			movies: [ 
+			searchTerm: '',
+			movies: []
+		};
+	}
+
+	handleAddMovie(title, actors, year, genre, rating) {
+		this.setState({
+			movies: [
+				...this.state.movies,
 				{
-					id: 1,
-					title: "Inception",
-					genre: "Action",
-					actors: "di caprio",
-					rating: 7,
-					year: 2010
-				}, {
-					id: 2,
-					title: "Titanic",
-					genre: "Romance",
-					actors: "di caprio",
-					rating: 6,
-					year: 1994
+					id: uuid(),
+					title: title,
+					genre: genre,
+					actors: actors,
+					rating: rating,
+					year: year
 				}
 			]
-		};
+		});
 
-		// create function to get localStorage data on load
-		// localSearch = () => {
-		//		localStorage.getItem();
-		// }
+		console.log("state.movies from handleAddMovie::: ", this.state.movies);
+	}
+
+	handleDeleteMovie(id) {
+		// filter -- newArr takes all values except the one with id from the parameter
+		let newArr = this.state.movies.filter((x) => x.id != id);
+		this.setState({ movies: newArr });
+	}
+
+	handleSearchMovie(searchText) {
+		this.setState({ searchTerm: searchText.toLowerCase() })
+		console.log("this.state.searchTerm = ", this.state.searchTerm);
 	}
 
 
 	render() {
-		const {movies} = this.state;
+		const {movies, searchTerm} = this.state;
+		const filteredMovies = this.state.movies.filter((movie) => { 
+				return movie.title.toLowerCase().match(this.state.searchTerm) 
+		});
 		return (
 			<div >
-				<MovieList movies={movies} />
-				<MovieAdd />
-				<MovieSearch />
+				<MovieSearch onSearchMovie={this.handleSearchMovie.bind(this)} />
+				<MovieAdd onAddMovie={this.handleAddMovie.bind(this)} />
+				<MovieList 
+					movies={filteredMovies} 
+					onDeleteMovie={this.handleDeleteMovie.bind(this)} />
 			</div>
 		)
 	}
