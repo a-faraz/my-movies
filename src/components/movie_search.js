@@ -24,7 +24,6 @@ class MovieSearch extends Component {
 		)
 	}
 
-
 }
 
 export default MovieSearch;

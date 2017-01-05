@@ -11,6 +11,7 @@ class MovieAdd extends Component {
 		// stop page from reloading
 		e.preventDefault();
 		const movieTitle = this.refs.movieTitle.value;
+		// actors could be implemented as an Array
 		const movieActors = this.refs.movieActors.value;
 		const movieYear = this.refs.movieYear.value;
 		const movieGenre = this.refs.movieGenre.value;
@@ -39,11 +40,10 @@ class MovieAdd extends Component {
 					<input className="form-input" type="text" ref="movieYear" placeholder="Year" />
 					<input className="form-input" type="text" ref="movieGenre" placeholder="Genre"/>
 					<input className="form-input" type="text" ref="movieRating" placeholder="Rating" />
-					<button className="">Add Movie</button>
+					<button className="form-input">Add Movie</button>
 				</form>
 		)
 	}
-
 
 }
 

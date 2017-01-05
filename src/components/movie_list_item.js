@@ -1,5 +1,6 @@
 import React from 'react'
 
+	// same as movie = props.movie
 const MovieListItem = ({movie, onDeleteMovie}) => {
 
 	// each movie comes as an individual object
@@ -10,15 +11,14 @@ const MovieListItem = ({movie, onDeleteMovie}) => {
 					<div className="delete" href="#" onClick={() => onDeleteMovie(movie.id)} >
 						x
 					</div>
-				
-					<ul className="item-heading">
+					<div className="item-heading">
 						{movie.title} ({movie.year})
-					</ul>
-					<ul>
+					</div>
+					<div className="item-detail">
 						Actors: {movie.actors} <br/>   
 						Genre: {movie.genre} <br/>
 						Rating: {movie.rating}
-					</ul>
+					</div>
 
 		</li>
 	);
