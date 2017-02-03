@@ -1,7 +1,7 @@
 ## Movie Challenge
 
 A list of your favorite movies. Add, Search, or Delete from your list. 
-Built in ReactJS as a coding challenge for InMotion Software.
+Built in ReactJS as a coding challenge.
 
 ###Tools:###
 node-uuid
