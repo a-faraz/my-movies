@@ -12,6 +12,7 @@ module.exports = {
 		// stringify the state that is passed from the movieApp component
 		console.log("setMovies id: ", id)
 			localStorage.setItem(id, JSON.stringify(movies));
+			// undefined will be returned if data not valid
 			return movies;
 		}
 	},

@@ -52,7 +52,7 @@ class MovieApp extends Component {
 				return movie.title.toLowerCase().match(this.state.searchTerm)  ||
 								movie.genre.toLowerCase().match(this.state.searchTerm) ||
 								movie.actors.toLowerCase().match(this.state.searchTerm)||
-								movie.rating.toLowerCase().match(this.state.searchTerm)||
+								movie.rating.toString().match(this.state.searchTerm)||
 								movie.year.toString().match(this.state.searchTerm)
 		});
 		return (

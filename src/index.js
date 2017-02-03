@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
 import MovieApp from './components/movieApp';
-
+// most outer level component
 class App extends Component {
 	constructor(props) {
 		super(props);
