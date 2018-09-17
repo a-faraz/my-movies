@@ -9,7 +9,7 @@
   "author": "AnjumFaraz10@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.1.2",
     "lodash": "^4.17.4",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
